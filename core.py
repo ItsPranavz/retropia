@@ -1,15 +1,15 @@
-import&nbsp;math
+import math
 
-def&nbsp;refraction(k,&nbsp;t_delta,&nbsp;r_last,&nbsp;R_natural,&nbsp;d_n,&nbsp;rx_last):
-&nbsp;&nbsp;return&nbsp;r_last&nbsp;+&nbsp;(R_natural&nbsp;+&nbsp;d_n&nbsp;+&nbsp;rx_last&nbsp;-&nbsp;r_last)*(1&nbsp;-&nbsp;math.exp((-1)*(t_delta/k)))
+def refraction(k, t_delta, r_last, R_natural, d_n, rx_last):
+  return r_last + (R_natural + d_n + rx_last - r_last)*(1 - math.exp((-1)*(t_delta/k)))
 
-time_constant&nbsp;=&nbsp;float(input("Time&nbsp;constant&nbsp;(months)&nbsp;=&nbsp;"))
-time_gap&nbsp;=&nbsp;float(input("Time&nbsp;difference&nbsp;in&nbsp;refractions&nbsp;(months)&nbsp;=&nbsp;"))
-last_refraction&nbsp;=&nbsp;float(input("Last&nbsp;value&nbsp;of&nbsp;refraction&nbsp;(Diopters)&nbsp;=&nbsp;"))
-natural_refraction&nbsp;=float(input("Natural&nbsp;refraction&nbsp;point&nbsp;(Diopters)&nbsp;=&nbsp;"))
-near_demand&nbsp;=&nbsp;float(input("Effective&nbsp;near&nbsp;use&nbsp;power&nbsp;(Diopters)&nbsp;=&nbsp;"))
-last_rx&nbsp;=&nbsp;float(input("Last&nbsp;correction&nbsp;prescription&nbsp;=&nbsp;"))
+time_constant = float(input("Time constant (months) = "))
+time_gap = float(input("Time difference in refractions (months) = "))
+last_refraction = float(input("Last value of refraction (Diopters) = "))
+natural_refraction =float(input("Natural refraction point (Diopters) = "))
+near_demand = float(input("Effective near use power (Diopters) = "))
+last_rx = float(input("Last correction prescription = "))
 
-next_refraction&nbsp;=&nbsp;refraction(time_constant,&nbsp;time_gap,&nbsp;last_refraction,&nbsp;natural_refraction,&nbsp;near_demand,&nbsp;last_rx)
+next_refraction = refraction(time_constant, time_gap, last_refraction, natural_refraction, near_demand, last_rx)
 
-print(f"Next&nbsp;refraction&nbsp;is&nbsp;{next_refraction}")
+print(f"Next refraction is {next_refraction}")
